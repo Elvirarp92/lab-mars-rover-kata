@@ -27,6 +27,23 @@ let obstacleArray = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   ];
 // ======================
+
+function setRandomObstacles(matrix, obstaclesPerRow) { //Works decently, but sometimes generates one extra obstacle in the first row
+  for (let array of matrix) {
+    let obstacleCounter = 0;
+    for (i = 0; i< array.length; i++) {
+      let newObstacleValue = Math.floor(Math.random() * (1 - 0 + 1) ) + 0; //generates integer between 0 and 1, both included
+      array[i] = newObstacleValue;
+      if (newObstacleValue == 1){
+        obstacleCounter++;
+        if (obstacleCounter >= obstaclesPerRow){
+          break;
+        }
+      }
+    }
+  }
+}
+
 function setPosition(vehicle, x, y) /*checks whether the rover can move to its new position, if so sets it*/ {
   if (vehicle.orientation == "N" && x < 0)
     return console.log(
@@ -165,4 +182,8 @@ function commandParse(string1, vehicle1, string2, vehicle2) {
   }
 }
 
+setRandomObstacles(obstacleArray, 2);
+
 commandParse("frfflflfbbbb", rover1, "fllffrf", rover2);
+
+console.log(obstacleArray);
