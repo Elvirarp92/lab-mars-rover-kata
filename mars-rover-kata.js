@@ -184,6 +184,6 @@ function commandParse(string1, vehicle1, string2, vehicle2) {
 
 setRandomObstacles(obstacleArray, 2);
 
-commandParse("frfflflfbbbb", rover1, "fllffrf", rover2)
+commandParse("frfflflfbbbb", rover1, "fllffrf", rover2);
 
 console.log(obstacleArray);
