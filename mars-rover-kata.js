@@ -9,7 +9,7 @@ function Rover(name, x, y, orientation) {
 Rover.prototype.travelLog = [];
 
 const rover1 = new Rover("rover1", 0, 0, "N");
-const rover2 = new Rover("rover2", 0, 1, "E");
+const rover2 = new Rover("rover2", 3, 5, "E");
 
 // ======================
 // Obstacle array goes here! (10x10, where 1s are obstacles)
@@ -184,6 +184,6 @@ function commandParse(string1, vehicle1, string2, vehicle2) {
 
 setRandomObstacles(obstacleArray, 2);
 
-commandParse("frfflflfbbbb", rover1, "fllffrf", rover2);
+commandParse("frfflflfbbbb", rover1, "fllffrf", rover2)
 
 console.log(obstacleArray);
