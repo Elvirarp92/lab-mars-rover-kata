@@ -1,32 +1,30 @@
-/* TO DO: randomize obstacle presence on grid*/
+// ======================
+// Obstacle array goes here! (10x10, where 1s are obstacles)
+// ======================
+let obstacleArray = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
 // ======================
 function Rover(name, x, y, orientation) {
   this.name = name;
   this.x = x; //in a 10x10 grid
   this.y = y;
   this.orientation = orientation; //"N", "S", "E" or "Q"
+  obstacleArray[x][y] = 1;
 }
 Rover.prototype.travelLog = [];
 
 const rover1 = new Rover("rover1", 0, 0, "N");
-const rover2 = new Rover("rover2", 3, 5, "E");
-
-// ======================
-// Obstacle array goes here! (10x10, where 1s are obstacles)
-// ======================
-let obstacleArray = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-  ];
-// ======================
+const rover2 = new Rover("rover2", 0, 1, "W");
 
 function setRandomObstacles(matrix, obstaclesPerRow) {
   for (let array of matrix) {
