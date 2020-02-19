@@ -28,7 +28,7 @@ let obstacleArray = [
   ];
 // ======================
 
-function setRandomObstacles(matrix, obstaclesPerRow) { //Works decently, but sometimes generates one extra obstacle in the first row
+function setRandomObstacles(matrix, obstaclesPerRow) {
   for (let array of matrix) {
     let obstacleCounter = 0;
     for (i = 0; i< array.length; i++) {
