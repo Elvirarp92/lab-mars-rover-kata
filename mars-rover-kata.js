@@ -32,10 +32,10 @@ function setRandomObstacles(matrix, obstaclesPerRow) { //Works decently, but som
   for (let array of matrix) {
     let obstacleCounter = 0;
     for (i = 0; i< array.length; i++) {
-      let newObstacleValue = Math.floor(Math.random() * (1 - 0 + 1) ) + 0; //generates integer between 0 and 1, both included
-      array[i] = newObstacleValue;
+      let newObstacleValue = Math.round(Math.random()); //generates a random integer between 0 and 1
       if (newObstacleValue == 1){
         obstacleCounter++;
+        array[i] = newObstacleValue;
         if (obstacleCounter >= obstaclesPerRow){
           break;
         }
