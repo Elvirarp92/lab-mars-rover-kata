@@ -1,6 +1,3 @@
-// ======================
-// Obstacle array goes here! (10x10, where 1s are obstacles)
-// ======================
 let obstacleArray = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -13,12 +10,12 @@ let obstacleArray = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-// ======================
+
 function Rover(name, x, y, orientation) {
   this.name = name;
   this.x = x; //in a 10x10 grid
   this.y = y;
-  this.orientation = orientation; //"N", "S", "E" or "Q"
+  this.orientation = orientation; //"N", "S", "E" or "W"
   obstacleArray[x][y] = 1;
 }
 Rover.prototype.travelLog = [];
